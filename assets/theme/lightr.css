@@ -1,0 +1,31 @@
+@import "/assets/fonts/raleway/raleway-latin.css";
+@import "/assets/fonts/icofont/icofont.min.css";
+
+html,body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.color-1 {   color: #212F3D; }
+.color-2 {   color: #641E16; }
+.color-3 {   color: #B03A2E; }
+.color-4 {   color: #8E44AD; }
+.color-5 {   color: #2980B9; }
+.color-6 {   color: #1ABC9C; }
+.color-7 {   color: #F1C40F; }
+.color-8 {   color: #DC7633; }
+.bgcolor-1 { background-color: #212F3D; }
+.bgcolor-2 { background-color: #641E16; }
+.bgcolor-3 { background-color: #B03A2E; }
+.bgcolor-4 { background-color: #8E44AD; }
+.bgcolor-5 { background-color: #2980B9; }
+.bgcolor-6 { background-color: #1ABC9C; }
+.bgcolor-7 { background-color: #F1C40F; }
+.bgcolor-8 { background-color: #DC7633; }
+
