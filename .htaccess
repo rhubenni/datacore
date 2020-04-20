@@ -1,0 +1,54 @@
+# Ativa links simbólicos
+Options +FollowSymLinks
+
+# Configurações PHP
+php_value auto_prepend_file "C:/Projects/datacore.dev.lab/cybelizr/cybelizer.load.php"
+
+# controle de cache para arquivos estáticos, 10 dias
+<FilesMatch ".(ico|jpg|jpeg|png|gif)$">
+    Header set Cache-Control "max-age=864000"
+</FilesMatch>
+
+# bloqueia arquivos de configuração do Apache
+<Files ".ht*">
+    Require all denied
+</Files>
+
+# Adiciona mimetypes
+AddType application/x-javascript .js
+AddType text/css .css
+
+# Ativa compressão para mime-types especificos
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Ativa mod rewrite
+# RewriteEngine On
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !^/apps/
+# RewriteRule ^(.*)([^/])$ /apps/$1$2/ [L]
+
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} !^/apps/
+# RewriteRule ^(.*)$ /apps/$1 [L]
+
+#RewriteCond %{TIME_HOUR} ^11$
+#RewriteRule ^.*$ - [F,L]
+
+#RewriteRule ^.*$ index.php
+#RewriteCond %{REQUEST_FILENAME} !apps
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /apps/$1 [L,NC,QSA]

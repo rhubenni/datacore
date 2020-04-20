@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2020 Rubeni Andrade
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+    <head>
+        <title>Controle de Acesso</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/assets/bootstrap/4.3.1/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/theme/lightr.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/theme/ac.css" rel="stylesheet" type="text/css"/>
+    </head>
+    
+    <body class="body-centered bg-gray-1">
+        <form class="form-signin">
+            <div id="ac-form-loading" class="text-center">
+                <h2 class="mt-5 mb-5">Aguarde</h2>
+                <hr />
+                <p>Estamos validando seus dados de acesso...</p>
+                <hr />
+                <img class="mt-5" src="/assets/images/loader-813.gif" alt=""/>
+            </div>
+            <div id="ac-form-fail">
+                <div class="text-center">
+                    <h2 class="mt-5">Oops!</h2>
+                    <h5 class="mt-5">Algo deu errado!</h5>
+                </div>
+                <hr />
+                <p class="text-justify p-3">
+                    Não foi possível autenticar na plataforma com os dados informados.
+                    <br />&nbsp;<br />
+                    Verifique se credenciais de acesso que você está utilizando são válidas, se você possui
+                    autorização para uso deste sistema e se o método de acesso escolhido está correto.
+                    <br />&nbsp;<br />
+                    Caso você acredite que deveria ter acesso a esta plataforma e, por algum motivo, não está
+                    conseguindo autenticar-se, por favor, entre com contato com o administrador do sistema.
+                </p>
+                <hr />
+                <button onclick="javascript:document.location.reload(true)" class="btn btn-sm btn-warning btn-block" type="button">&lt;&lt; Tentar novamente</button>
+                
+            </div>
+            <div id="ac-form-content">
+                <div class="text-center mb-4 mt-4">
+                    <img class="m-1" src="/assets/images/dblogo.png" alt="" width="72" height="72">
+                    <h2 class="h3 mb-4 font-weight-normal">DataCore</h2>
+                    <br />
+                    <p>
+                        Digite seu login e senha para entrar:
+                    </p>
+                </div>
+
+                <div class="form-label-group">
+                    <select id="inputMetodo" class="form-control" required>
+                        <option value="ntlm" selected>Autenticação de dom&iacute;nio</option>
+                        <option value="native">Autentica&ccedil;&atilde;o nativa</option>
+                        <option value="google" disabled>Autentica&ccedil;&atilde;o Google</option>
+                        <option value="facebook" disabled>Autentica&ccedil;&atilde;o Facebook</option>
+                        <option value="office365" disabled>Autentica&ccedil;&atilde;o Office 365</option>
+                    </select>
+                    <!-- label for="inputMetodo">M&eacute;todo</label -->
+                </div>
+
+                <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+                    <label for="inputEmail">Usu&aacute;rio</label>
+                </div>
+
+                <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                    <label for="inputPassword">Senha</label>
+                </div>
+
+                <div class="custom-control custom-switch checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="rememberUser">
+                    <label class="custom-control-label" for="rememberUser">Lembrar Usu&aacute;rio</label>
+                </div>
+
+                <button class="btn btn-sm btn-primary btn-block" type="submit">Entrar &gt;&gt;</button>
+                <!-- p class="mt-5 mb-3 text-muted text-center">Cybelyzr/AC/20200420</p -->
+            </div>
+        </form>
+    </body>
+</html>
